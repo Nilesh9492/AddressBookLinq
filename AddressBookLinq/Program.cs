@@ -8,10 +8,8 @@ namespace AddressBookLinq
         {
             Console.WriteLine("Hello World!");
             AddressBookManager addressBookManager = new AddressBookManager();
-            addressBookManager.CreateDataTable();
-            //addressBookManager.AddValues();
-            //addressBookManager.View();
-            addressBookManager.EditDataTableUsingName("nil","FirstName");
+            //addressBookManager.CreateDataTable();
+            addressBookManager.DeleteContactUsingName("zxc");
             addressBookManager.View();
         }
     }
