@@ -142,6 +142,25 @@ namespace AddressBookLinq
             }
             return false;
         }
+        public string RetrievePerson(string CityName, string StateName)
+        {
+            AddValues();
+            string nameList = null;
+            var modifiedList = (from Contact in dataTable.AsEnumerable() where (Contact.Field<string>("State") == StateName || Contact.Field<string>("City") == CityName) select Contact);
+            foreach (var dtRows in modifiedList)
+            {
+                if (dtRows != null)
+                {
+                    Console.WriteLine("{0} | {1} | {2} |  {3} | {4} | {5} | {6} | {7} \n", dtRows["FirstName"], dtRows["LastName"], dtRows["Address"], dtRows["City"], dtRows["State"], dtRows["Zip"], dtRows["PhoneNumber"], dtRows["Email"]);
+                    nameList += dtRows["FirstName"] + " ";
+                }
+                else
+                {
+                    nameList = null;
+                }
+            }
+            return nameList;
+        }
         public void View()
         {
             foreach (DataRow dtRows in dataTable.Rows)
