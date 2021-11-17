@@ -12,7 +12,8 @@ namespace AddressBookLinq
             //addressBookManager.DeleteContactUsingName("zxc");
             //addressBookManager.View();
             //addressBookManager.RetrievePerson("dhl","mh");
-            addressBookManager.CountByCityState();
+            //addressBookManager.CountByCityState();
+            addressBookManager.Sort("dhl");
         }
     }
 }
